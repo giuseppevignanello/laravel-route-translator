@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 class RouteTranslator
 {
     /**
-     * This translate a route key using tha lang file "routes.php" in the app project.
+     * This function translate a route key using the lang file "routes.php" in the app project.
      *
      * @param string $routeKey Es. 'about'
      * @param string|null $locale
