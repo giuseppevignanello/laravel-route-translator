@@ -1,6 +1,6 @@
 <?php
 
-namespace TuoNome\RouteTranslator;
+namespace Peppe\RouteTranslator;
 
 use Illuminate\Support\Facades\App;
 
@@ -13,9 +13,10 @@ class RouteTranslator
      * @param string|null $locale
      * @return string
      */
-    public function translateRoute(string $routeKey, ?string $locale = null): string
+  public function translateRoute(string $routeKey, ?string $locale = null): string
     {
         $locale = $locale ?: App::getLocale();
+        
 
         return trans("routes.{$routeKey}", [], $locale);
     }
