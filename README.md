@@ -20,3 +20,17 @@ Require the package via Composer:
 ```bash
 composer require peppe/laravel-route-translator
 ```
+
+
+## Usage
+Add your route translation in a ```bash route.php ``` in your ```bash lang/{{locale}} ``` . Later you only have to use the trans macro on your route file like this: 
+
+```bash
+ Route::get(Route::trans('about'), function () {
+        return __('About Us page');
+    })->name('about');
+
+    Route::get(Route::trans('contact'), function () {
+        return __('Contact page');
+    })->name('contact');
+```
