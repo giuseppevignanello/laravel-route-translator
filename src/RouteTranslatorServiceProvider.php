@@ -11,17 +11,13 @@ class RouteTranslatorServiceProvider extends ServiceProvider
 
    public function boot()
     {
-        $router = $this->app->make(Router::class);
 
-        Route::macro('localized', function (callable $callback) {
-            $routeTranslator = new RouteTranslator();
-            
-               Route::group([], function () use ($callback, $routeTranslator, ) {
-                    Route::macro('trans', function ($key) use ($routeTranslator, ) {
-                        return $routeTranslator->translateRoute($key, );
-                    });
-                    $callback();
-                });
+        $routeTranslator = new RouteTranslator();
+               
+        Route::macro('trans', function ($key) use ($routeTranslator, ) {
+            return $routeTranslator->translateRoute($key, );
         });
+                    
+       
     }
 }
